@@ -1,5 +1,5 @@
 import pytest
-from matops.excepions import NotSquareException, ValidationError
+from matops.exceptions import NotSquareException, ValidationError
 from matops.matrix import Matrix
 
 
