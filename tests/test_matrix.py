@@ -339,6 +339,16 @@ def test_zero_matrix_1():
 def test_zero_matrix_2():
     m = Matrix(
         [
+            [0],
+            [0],
+        ]
+    )
+    assert m.is_zero_matrix()
+
+
+def test_zero_matrix_3():
+    m = Matrix(
+        [
             [1, 0],
             [0, 0],
         ]
