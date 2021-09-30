@@ -30,7 +30,6 @@ class Matrix:
     def __mul__(self, other: Union["Matrix", Number]) -> "Matrix":
         if isinstance(other, (int, float)):
             temp = self._get_zero_matrix()
-            temp = [[0 for _ in range(self.num_cols)] for _ in range(self.num_rows)]
             for i in range(self.num_rows):
                 for j in range(self.num_cols):
                     temp[i][j] = self.rows[i][j] * other
@@ -103,9 +102,7 @@ class Matrix:
         return self.num_rows == self.num_cols
 
     def is_zero_matrix(self) -> bool:
-        return [
-            [0 for _ in range(self.num_cols)] for _ in range(self.num_rows)
-        ] == self.rows
+        return self._get_zero_matrix() == self.rows
 
     def is_symmetric_matrix(self) -> bool:
         return self == self.transpose()
