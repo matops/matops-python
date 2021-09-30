@@ -1,6 +1,6 @@
 from typing import List, Tuple, Union
 
-from .excepions import NotSquareException, ValidationError
+from .exceptions import NotSquareException, ValidationError
 
 Number = Union[int, float]
 
