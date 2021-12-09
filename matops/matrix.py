@@ -13,6 +13,13 @@ class Matrix:
     def __str__(self) -> str:
         return str(self.rows)
 
+    def __round__(self, ndigits: int = None) -> "Matrix":
+        temp = self._get_zero_matrix()
+        for i in range(self.num_rows):
+            for j in range(self.num_cols):
+                temp[i][j] = round(self.rows[i][j], ndigits)
+        return Matrix(temp)
+
     def __add__(self, other: "Matrix") -> "Matrix":
         temp = self._get_zero_matrix()
         for i in range(self.num_rows):

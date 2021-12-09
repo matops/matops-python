@@ -564,3 +564,23 @@ def test_proof_1():
     )
 
     assert (m1 * m2).transpose() == m2.transpose() * m1.transpose()
+
+
+def test_round_1():
+    m1 = Matrix(
+        [
+            [1.1123, -2.982143],
+            [3.21043, 4.4253],
+        ]
+    )
+    assert round(m1) == Matrix([[1, -3], [3, 4]])
+
+
+def test_round_2():
+    m1 = Matrix(
+        [
+            [1.1123, -2.982143],
+            [3.21043, 4.4253],
+        ]
+    )
+    assert round(m1, 2) == Matrix([[1.11, -2.98], [3.21, 4.43]])
